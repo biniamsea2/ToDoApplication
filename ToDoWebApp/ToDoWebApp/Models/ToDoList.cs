@@ -17,7 +17,7 @@ namespace ToDoWebApp.Models
         public bool Completed { get; set; }
         [Required]
         [Display(Name = "Due Date")]
-        public int DueDate { get; set; }
+        public string DueDate { get; set; }
 
     }
 
