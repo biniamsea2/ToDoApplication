@@ -5,14 +5,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ToDoWebApp.Models;
+using ToDoWebApp.Models.Interfaces;
 
 namespace ToDoWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly ITaskManager _context;
+        public HomeController(ITaskManager task)
         {
-            return View();
+            _context = task;
+        }
+
+        public async Task <IActionResult> Index()
+        {
+            return View(await _context.GetTasksAsync());
         }
 
         public IActionResult About()
