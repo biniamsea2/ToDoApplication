@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ToDoWebApp.Data;
+using ToDoWebApp.Models.Interfaces;
+using ToDoWebApp.Models.Services;
 
 namespace ToDoWebApp
 {
@@ -24,25 +26,18 @@ namespace ToDoWebApp
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-
+            services.AddMvc();
             services.AddDbContext<StorageDbContext>(options =>
      options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            //registering dependecy injection
+            services.AddScoped<ITaskManager, TaskService>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        [Obsolete]
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -57,8 +52,8 @@ namespace ToDoWebApp
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
             app.UseRouting();
+            app.UseCookiePolicy();
 
             app.UseEndpoints(endpoints =>
             {

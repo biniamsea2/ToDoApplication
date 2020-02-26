@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ToDoWebApp.Models;
 using ToDoWebApp.Models.Interfaces;
 
@@ -13,13 +13,13 @@ namespace ToDoWebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ITaskManager _context;
-        public HomeController(ITaskManager task)
+        public HomeController(ITaskManager context)
         {
-            _context = task;
+            _context = context;
         }
 
         #region Index
-        public async Task <IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             return View(await _context.GetTasksAsync());
         }

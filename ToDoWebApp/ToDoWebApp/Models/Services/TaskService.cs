@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using ToDoWebApp.Data;
@@ -32,9 +32,9 @@ namespace ToDoWebApp.Models.Services
 
         public async Task<ToDoList> GetTaskByIDAsync(int id) => await _context.ToDoPackage.FirstOrDefaultAsync(t1 => t1.ID == id);
 
-        public async Task<List<ToDoList>> GetTasksAsync()
+        public Task<List<ToDoList>> GetTasksAsync()
         {
-            List<ToDoList> tasks = await _context.ToDoPackage.ToListAsync();
+            var tasks = _context.ToDoPackage.ToListAsync();
             return tasks;
         }
 

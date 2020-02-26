@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ToDoWebApp.Models.Interfaces
 {
-    interface ITaskManager
+    public interface ITaskManager
     {
         //create a task
         Task CreateATaskAsync(ToDoList task);
