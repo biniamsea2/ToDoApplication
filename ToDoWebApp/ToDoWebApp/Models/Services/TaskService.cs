@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using ToDoWebApp.Data;
@@ -16,29 +17,31 @@ namespace ToDoWebApp.Models.Services
             _context = context;
         }
 
-        public Task CreateATaskAsync(ToDoList task)
+        public async Task CreateATaskAsync(ToDoList task)
         {
-            throw new NotImplementedException();
+            await _context.AddAsync(task);
+            await _context.SaveChangesAsync();
         }
 
-        public Task DeleteTaskAsync(int id)
+        public async Task DeleteTaskAsync(int id)
         {
-            throw new NotImplementedException();
+            ToDoList task = await GetTaskByIDAsync(id);
+            _context.ToDoPackage.Remove(task);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<ToDoList> GetTaskByIDAsync(int id)
+        public async Task<ToDoList> GetTaskByIDAsync(int id) => await _context.ToDoPackage.FirstOrDefaultAsync(t1 => t1.ID == id);
+
+        public async Task<List<ToDoList>> GetTasksAsync()
         {
-            throw new NotImplementedException();
+            List<ToDoList> tasks = await _context.ToDoPackage.ToListAsync();
+            return tasks;
         }
 
-        public Task<List<ToDoList>> GetTasksAsync()
+        public async Task UpdateTaskAsync(ToDoList task)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateTaskAsync(ToDoList task)
-        {
-            throw new NotImplementedException();
+            _context.Update(task);
+            await _context.SaveChangesAsync();
         }
     }
 }
