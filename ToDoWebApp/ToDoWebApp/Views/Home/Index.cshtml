@@ -55,50 +55,54 @@
         </a>
     </div>*@
 
-
+<ul class="navbar-nav ml-auto">
+    <li class="navbar-item">
+        <a id="space" asp-action="Create">Create New</a>
+    </li>
+</ul>
 
 <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Task)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Priority)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Completed)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DueDate)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Task)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Priority)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Completed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DueDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Task)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Priority)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Completed)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DueDate)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Task)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Priority)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Completed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 

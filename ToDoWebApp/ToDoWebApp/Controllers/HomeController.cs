@@ -26,6 +26,13 @@ namespace ToDoWebApp.Controllers
         #endregion
 
         #region Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+        #endregion
+
+        #region Create Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Task,Priority,Completed,DueDate")] ToDoList item)
