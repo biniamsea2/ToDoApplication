@@ -48,7 +48,7 @@
 Clone this repository to your local machine.
 
 ```
-$ git clone https://github.com/biniamsea2/ToDoListApp.git
+$ git clone https://github.com/biniamsea2/ToDoApplication.git
 ```
 
 ### To run the program from Visual Studio:
@@ -56,9 +56,9 @@ Select ```File``` -> ```Open``` -> ```Project/Solution```
 
 Next navigate to the location you cloned the Repository.
 
-Double click on the ```ToDoListApp``` directory.
+Double click on the ```ToDoApplication``` directory.
 
-Then select and open ```ToDoListApp```
+Then select and open ```ToDoApplication```
 
 ---
 
@@ -76,7 +76,7 @@ Then select and open ```ToDoListApp```
 ![Image 1]()
 
 ---
-### ToDoList Table:  
-The ToDoList table consists of all the tasks' information that is required when creating a new task. It includes the primary ID key, task, priority level, completion, and due date. 
+### ToDoPackage Table:  
+The ToDoPackage table consists of all the tasks' information that is required when creating a new task. It includes the primary ID key, task, priority level, completion, and due date. 
 
 ------------------------------
