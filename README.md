@@ -64,17 +64,18 @@ Then select and open ```ToDoApplication```
 
 ### Visuals
 
-### Entity Relationship Diagram
-![Image 1]()
-### Application Home Page
-![Image 1]()
-### View all Tasks  
-![Image 1]()
+### View of all Tasks  
+![Image 1](https://github.com/biniamsea2/ToDoApplication/blob/master/ToDoWebApp/Screenshot%20(109).png)
+### Creating a new Task  
+![Image 1](https://github.com/biniamsea2/ToDoApplication/blob/master/ToDoWebApp/Screenshot%20(110).png)
+### Task successfully added    
+![Image 1](https://github.com/biniamsea2/ToDoApplication/blob/master/ToDoWebApp/Screenshot%20(111).png)
 ### Editing a Task
-![Image 1]()
+![Image 1](https://github.com/biniamsea2/ToDoApplication/blob/master/ToDoWebApp/Screenshot%20(112).png)
+### Task Details  
+![Image 1](https://github.com/biniamsea2/ToDoApplication/blob/master/ToDoWebApp/Screenshot%20(113).png)
 ### Deleting a Task
-![Image 1]()
-
+![Image 1](https://github.com/biniamsea2/ToDoApplication/blob/master/ToDoWebApp/Screenshot%20(114).png)
 ---
 ### ToDoPackage Table:  
 The ToDoPackage table consists of all the tasks' information that is required when creating a new task. It includes the primary ID key, task, priority level, completion, and due date. 
