@@ -8,8 +8,8 @@
 ## Features:  
 -  Creating a task  
 -  Label a task as completed or uncompleted  
--  Set task priority  
--  Edit task
+-  Setting task priority  
+-  Editing a task
 -  Deleting a task  
 -  View all tasks  
 
