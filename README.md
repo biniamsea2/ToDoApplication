@@ -6,7 +6,7 @@
 ## Application Summary
 
 ## Features:  
--  Create a task  
+-  Creating a task  
 -  Label a task as completed or uncompleted  
 -  Set task priority  
 -  Edit task
