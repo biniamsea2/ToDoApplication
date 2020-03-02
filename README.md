@@ -10,7 +10,7 @@
 -  Label a task as completed or uncompleted  
 -  Set task priority  
 -  Edit task
--  Delete a task  
+-  Deleting a task  
 -  View all tasks  
 
 ## Application Specifications
