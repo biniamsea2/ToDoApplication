@@ -11,7 +11,7 @@
 -  Setting task priority  
 -  Editing a task
 -  Deleting a task  
--  View all tasks  
+-  Viewing all tasks  
 
 ## Application Specifications
 ###### Application includes the following:  
